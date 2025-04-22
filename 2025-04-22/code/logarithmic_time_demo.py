@@ -1,9 +1,11 @@
 # logarithmic_time_demo.py
 # 二分探索（対数時間 O(log n)）のロジックを理解するためのデモ
 
-def binary_search_with_debug(arr, target):
+def logarithmic_time_example_with_debug(arr, target):
     """
     二分探索アルゴリズム（デバッグプリント付き）
+    元のlogarithmic_time_exampleと同じロジックに
+    デバッグ情報を追加しています。
     
     Parameters:
         arr (list): ソート済みの探索対象配列
@@ -82,25 +84,25 @@ def demonstrate_binary_search():
     # 配列内に存在する値を探す
     print("\n例1: 配列内に存在する値を探す")
     target = 7
-    result = binary_search_with_debug(small_array, target)
+    result = logarithmic_time_example_with_debug(small_array, target)
     print(f"結果: 値 {target} はインデックス {result} で見つかりました。")
     
     # 配列内に存在しない値を探す
     print("\n例2: 配列内に存在しない値を探す")
     target = 8
-    result = binary_search_with_debug(small_array, target)
+    result = logarithmic_time_example_with_debug(small_array, target)
     print(f"結果: 値 {target} は配列内に存在しません（戻り値: {result}）。")
     
     # 配列の先頭にある値を探す
     print("\n例3: 配列の先頭にある値を探す")
     target = 1
-    result = binary_search_with_debug(small_array, target)
+    result = logarithmic_time_example_with_debug(small_array, target)
     print(f"結果: 値 {target} はインデックス {result} で見つかりました。")
     
     # 配列の末尾にある値を探す
     print("\n例4: 配列の末尾にある値を探す")
     target = 15
-    result = binary_search_with_debug(small_array, target)
+    result = logarithmic_time_example_with_debug(small_array, target)
     print(f"結果: 値 {target} はインデックス {result} で見つかりました。")
     
     # 少し大きな配列での二分探索
@@ -109,7 +111,7 @@ def demonstrate_binary_search():
     
     print("\n例5: より大きな配列での探索")
     target = 20
-    result = binary_search_with_debug(medium_array, target)
+    result = logarithmic_time_example_with_debug(medium_array, target)
     print(f"結果: 値 {target} はインデックス {result} で見つかりました。")
     
     # 計算量の説明
