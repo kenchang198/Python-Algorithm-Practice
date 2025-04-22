@@ -52,10 +52,11 @@ def demonstrate_time_complexity():
     sizes = [100, 1000, 10000, 100000]
     constant_times = []
     linear_times = []
-    quadratic_times = []
+    logarithmic_times = []
     
     # O(n²)のサイズを別途設定
     quadratic_sizes = [10, 50, 100, 500]
+    quadratic_times = []
     
     for size in sizes:
         arr = list(range(size))
@@ -69,6 +70,12 @@ def demonstrate_time_complexity():
         time_taken, _ = measure_execution_time(linear_time_example, arr)
         linear_times.append(time_taken)
         print(f"O(n) - サイズ {size}: {time_taken:.6f} 秒")
+        
+        # O(log n) の測定
+        target = size // 2  # 配列の中央付近の値を探索
+        time_taken, _ = measure_execution_time(logarithmic_time_example, arr, target)
+        logarithmic_times.append(time_taken)
+        print(f"O(log n) - サイズ {size}: {time_taken:.6f} 秒")
     
     print("\nO(n²)の計算量の測定:")
     for size in quadratic_sizes:
@@ -78,7 +85,7 @@ def demonstrate_time_complexity():
         quadratic_times.append(time_taken)
         print(f"O(n²) - サイズ {size}: {time_taken:.6f} 秒")
     
-    return sizes, constant_times, linear_times, quadratic_sizes, quadratic_times
+    return sizes, constant_times, linear_times, logarithmic_times, quadratic_sizes, quadratic_times
 
 if __name__ == "__main__":
     demonstrate_time_complexity()
