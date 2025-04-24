@@ -57,7 +57,6 @@ def test_best_case():
     print(f"結果: インデックス {index} で見つかりました")
     print(f"比較回数: {comparisons} 回")
     print(f"実行時間: {execution_time:.8f} 秒")
-    print(f"理論的計算量: O(1) (最良のケース)")
 
 # ========== 平均的なケース（ランダムな位置の要素を探す）のテスト ==========
 def test_average_case():
@@ -84,7 +83,6 @@ def test_average_case():
     print(f"結果: インデックス {index} で見つかりました")
     print(f"比較回数: {comparisons} 回")
     print(f"実行時間: {execution_time:.8f} 秒")
-    print(f"理論的計算量: O(n/2) ≈ O(n) (平均的なケース)")
 
 # ========== 最悪のケース（末尾の要素を探す）のテスト ==========
 def test_worst_case():
@@ -110,7 +108,6 @@ def test_worst_case():
     print(f"結果: インデックス {index} で見つかりました")
     print(f"比較回数: {comparisons} 回")
     print(f"実行時間: {execution_time:.8f} 秒")
-    print(f"理論的計算量: O(n) (最悪のケース)")
 
 # ========== 要素が存在しない場合のテスト ==========
 def test_not_found_case():
@@ -136,7 +133,6 @@ def test_not_found_case():
     print(f"結果: インデックス {index} (見つからなかった)")
     print(f"比較回数: {comparisons} 回")
     print(f"実行時間: {execution_time:.8f} 秒")
-    print(f"理論的計算量: O(n) (最悪のケース)")
 
 # ========== 配列サイズによる比較回数の変化 ==========
 def test_size_impact():
@@ -155,55 +151,22 @@ def test_size_impact():
         # 最良のケース: 先頭の要素を探す
         best_target = arr[0]
         _, best_comparisons = linear_search(arr, best_target)
-        print(f"  最良のケース（先頭）: {best_comparisons} 回の比較 (理論値: 1)")
+        print(f"  最良のケース（先頭）: {best_comparisons} 回の比較")
         
         # 平均的なケース: 中間付近の要素を探す
         avg_target = arr[size // 2]
         _, avg_comparisons = linear_search(arr, avg_target)
-        print(f"  平均的なケース（中間）: {avg_comparisons} 回の比較 (理論値: {size/2})")
+        print(f"  平均的なケース（中間）: {avg_comparisons} 回の比較")
         
         # 最悪のケース: 末尾の要素を探す
         worst_target = arr[-1]
         _, worst_comparisons = linear_search(arr, worst_target)
-        print(f"  最悪のケース（末尾）: {worst_comparisons} 回の比較 (理論値: {size})")
+        print(f"  最悪のケース（末尾）: {worst_comparisons} 回の比較")
         
         # 存在しない要素を探す
         not_found_target = size + 5
         _, not_found_comparisons = linear_search(arr, not_found_target)
-        print(f"  存在しない要素: {not_found_comparisons} 回の比較 (理論値: {size})")
-
-# ========== 理論との比較分析 ==========
-def theory_analysis():
-    print("\n===== 線形探索の計算量分析 =====")
-    print("線形探索アルゴリズムの計算量は以下のように特徴づけられます：")
-    print()
-    print("1. 最良のケース (Best Case):")
-    print("   - 目的の要素が配列の先頭にある場合")
-    print("   - 比較回数: 1回")
-    print("   - 計算量: O(1)")
-    print()
-    print("2. 平均的なケース (Average Case):")
-    print("   - 目的の要素が配列内のランダムな位置にある場合")
-    print("   - 平均比較回数: n/2回")
-    print("   - 計算量: O(n/2) ≈ O(n)")
-    print()
-    print("3. 最悪のケース (Worst Case):")
-    print("   - 目的の要素が配列の末尾にある場合")
-    print("   - 比較回数: n回")
-    print("   - 計算量: O(n)")
-    print()
-    print("4. 要素が存在しない場合:")
-    print("   - 最悪のケースと同様に、すべての要素を調べる必要がある")
-    print("   - 比較回数: n回")
-    print("   - 計算量: O(n)")
-    print()
-    print("5. 空間計算量 (Space Complexity):")
-    print("   - 追加のメモリ使用がほとんどない")
-    print("   - 計算量: O(1)")
-    print()
-    print("線形探索は実装が非常に単純なアルゴリズムですが、")
-    print("大きなデータセットでは効率が悪くなる可能性があります。")
-    print("ソート済みの配列では、二分探索のようなより効率的なアルゴリズムを使うことができます。")
+        print(f"  存在しない要素: {not_found_comparisons} 回の比較")
 
 # メイン実行部分
 if __name__ == "__main__":
@@ -217,8 +180,5 @@ if __name__ == "__main__":
     
     # 配列サイズによる影響のテスト
     test_size_impact()
-    
-    # 理論分析
-    theory_analysis()
     
     print("\n分析が完了しました。")
